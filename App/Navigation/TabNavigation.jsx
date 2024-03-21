@@ -8,6 +8,9 @@ import ProfileScreen from '../Screens/ProfileScreen';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import HomeScreenStackNav from './HomeScreenStackNav';
+import ExploreScreenStackNav from './ExploreScreenStackNav';
+import ProfileScreenStackNav from './ProfileScreenStackNav';
 
 
 
@@ -16,8 +19,8 @@ const Tab = createBottomTabNavigator();
 export default function TabNavigation() {
   return (
     <Tab.Navigator screenOptions={{headerShown:false,
-    tabBarActiveTintColor:"#88BD46",tabBarLabelStyle:{fontSize:"10px"}}}>
-    <Tab.Screen name="Home" component={HomeScreen}
+    tabBarActiveTintColor:"rgb(74 222 128)",tabBarLabelStyle:{fontSize:"10px"}}}>
+    <Tab.Screen name="Home" component={HomeScreenStackNav}
     options={{
         tabBarLabel:({color,size})=>(
             <Text style={{color:color,fontSize:size}}>Home</Text>
@@ -26,7 +29,7 @@ export default function TabNavigation() {
             <AntDesign name="home" size={size} color={color} />
         ))
     }} />
-    <Tab.Screen name="Explore" component={ExploreScreen}
+    <Tab.Screen name="Explore" component={ExploreScreenStackNav}
      options={{
         tabBarLabel:({color,size})=>(
             <Text style={{color:color,fontSize:size}}>Explore</Text>
@@ -44,7 +47,7 @@ export default function TabNavigation() {
             <MaterialIcons name="post-add" size={size} color={color} />
         ))
     }}/>
-    <Tab.Screen name='profile' component={ProfileScreen}
+    <Tab.Screen name='profile' component={ProfileScreenStackNav}
      options={{
         tabBarLabel:({color,size})=>(
             <Text style={{color:color,fontSize:size}}>Profile</Text>
